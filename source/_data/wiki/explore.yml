@@ -1,0 +1,13 @@
+name: 博客名字
+subtitle: '标题 | 副标题' # 副标题
+icon: /assets/images/avatar.jpg
+search:
+  filter: /explore/
+  placeholder: 在 探索 中搜索...
+base_dir: /explore/
+tree:
+  "站点":
+    - sites/工具库
+  "笔记":
+    - notes/探索者笔记
+  

@@ -1,0 +1,26 @@
+<%
+page.robots = 'noindex,follow';
+if (page.menu_id == undefined) {
+  page.menu_id = 'post';
+}
+%>
+<% if (site.categories.length) { %>
+  <widget class="widget-wrapper categories-widget">
+    <div class="widget-header categories-header dis-select">
+      <span class="name"><%- item.title %></span>
+    </div>
+    <div class='post-list'>
+      <article class='<%- scrollreveal("") %>' id='cats'>
+        <% site.categories.sort('path').each(function(category){ %>
+          <div>
+            <a class="<%= category.parent ? 'cat child' : 'cat'%>" href="<%= url_for(category.path) %>">
+              <span class='name'><%- icon('default:category') %><%- category.name %></span>
+              <span class='badge'>(<%- category.posts.length %>)</span>
+            </a>
+          </div>
+        <% }) %>
+      </article>
+    </div>
+  </widget>
+<% } %>
+

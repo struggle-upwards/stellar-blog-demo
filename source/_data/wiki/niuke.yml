@@ -1,0 +1,16 @@
+name: 牛客刷题
+title: 牛客 - 一个刷题网站
+subtitle: '一个刷题网站 | 实习前的些许风霜罢了'
+tags: 刷题
+icon: /assets/wiki/niuke/icon.svg
+cover: /assets/wiki/niuke/icon.svg
+coverpage: true # 默认是 true
+description: 总结在牛客刷题中遇到的bug及解决过程
+license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+share: true
+base_dir: /wiki/niuke/
+tree:
+  "基础回顾":
+    - 牛客零基础入门前端
+
+  

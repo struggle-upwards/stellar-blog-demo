@@ -1,0 +1,252 @@
+/* 基础滚动条样式 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(200, 155, 155, 0);
+  border-radius: 3em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c3c0c1;
+  border-radius: 2em;
+  opacity: 1;
+}
+
+/* 文章内链接 */
+li:not([class]) a:not([class]),
+p:not([class]) a:not([class]),
+table a:not([class]) {
+  padding-bottom: 3px;
+  /* 增加底部padding */
+  padding-right: 1px;
+  margin-right: 2px;
+  background: linear-gradient(0, var(--theme-link), var(--theme-link)) no-repeat center bottom / 100% 2px;
+}
+
+
+/* 导航栏提示框 */
+.nav-item {
+  position: relative;
+  /* 确保可以相对定位提示框 */
+  cursor: pointer;
+}
+
+.nav-item::before {
+  content: attr(title);
+  /* 使用元素的 title 属性作为内容 */
+  position: absolute;
+  white-space: nowrap;
+  color: #ffffff;
+  background: #656565;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: block;
+  /* 始终保持显示，但使用 opacity 控制可见性 */
+  transform: translateX(-50%);
+  /* 将提示框向左移动自身宽度的50%，以居中 */
+  top: 100%;
+  /* 将提示框放置在元素的底部 */
+  left: 50%;
+  /* 开始于元素的中心位置 */
+  opacity: 0;
+  /* 初始为透明，不可见 */
+  transition: opacity 0.2s ease-in-out;
+  /* 仅对透明度应用过渡效果 */
+  pointer-events: none;
+  /* 确保提示框不会影响鼠标事件 */
+  margin-top: 5px;
+  /* 在元素下方留一点间隙 */
+  z-index: 9999;
+  /* 确保提示在最上层显示 */
+}
+
+.nav-item:hover::before {
+  opacity: 1;
+  /* 鼠标悬停时全不透明，完全可见 */
+}
+
+/* 推荐文章标题颜色调整为白 */
+.related-posts .item .title {
+  color: var(--text);
+}
+
+/* 自定义打印样式 */
+@media print {
+
+  .l_left,
+  .l_right,
+  .top.bread-nav.footnote,
+  div#read-next,
+  div#post-ai,
+  div#related-posts,
+  div#comments,
+  section#license,
+  section#share,
+  footer {
+    display: none;
+  }
+
+  .md-text psw {
+    color: unset;
+    background: unset;
+    border: 3px dashed #ccc;
+  }
+
+  .markdownIt-Anchor {
+    display: none;
+    /* 隐藏原始链接内容 */
+  }
+
+  .article.banner {
+    background: none;
+    border-bottom: 1px dashed #ccc;
+  }
+
+  .banner,
+  .banner.top {
+    border-radius: 0;
+  }
+
+  .banner .bottom {
+    padding: 0rem;
+  }
+
+  #start {
+    display: unset;
+    /* 取消grid布局 */
+  }
+
+  p {
+    margin: 0 !important;
+    /* 调整字的上下边距 */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 !important;
+    /* 调整标题的上外边距 */
+  }
+
+  img {
+    max-height: 100vh;
+    /* 限制图片高度 */
+  }
+}
+
+/* home 导航 */
+.post-card.post .meta.cap span#post-words span.sep:before {
+  content: "|";
+}
+
+.post-card.post .meta.cap span#post-words span.updated {
+  visibility: hidden;
+}
+
+.post-card.post:hover .meta.cap span#post-words span.updated {
+  visibility: visible;
+}
+
+/* telegram timeline */
+.tag-plugin.timeline.ds-telegram .body p:first-child {
+  margin-top: 2px;
+}
+
+.tag-plugin.timeline.ds-telegram .body p:last-child {
+  margin-bottom: 2px;
+}
+
+.tag-plugin.timeline.ds-telegram .body img {
+  margin: 0.5rem 0;
+  max-height: 128px;
+  cursor: zoom-in;
+}
+
+.tag-plugin.timeline.ds-telegram .body .tag-plugin.image {
+  display: flex;
+}
+
+.tag-plugin.timeline.ds-telegram .body .tag-plugin.image .image-bg+.image-bg {
+  margin-left: 4px;
+}
+
+/* 默认的浅色模式颜色 */
+:root[data-theme="light"] {
+  --tag-text-color: #835EEC;
+}
+
+html[data-theme="light"] {
+  --code-bg-color: #F1F2F3
+}
+
+/* 暗黑模式下的颜色 */
+:root[data-theme="dark"] {
+  --tag-text-color: #A28BF2;
+}
+
+html[data-theme="dark"] {
+  --code-bg-color: #292C33;
+}
+
+/*鼠标样式*/
+body {
+  cursor: url('https://upyun.thatcdn.cn/public/cur/yiwei/S1.cur'), auto;
+}
+
+a, [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: url('https://upyun.thatcdn.cn/public/cur/yiwei/S2.cur'), auto !important
+}
+
+
+/*右侧时间线堵塞*/
+.widget-wrapper.timeline .tag-plugin.timeline .timenode .body{
+  margin-left: 1rem;
+}
+
+.md-text.content a.headerlink {
+  background: none;
+}
+
+.widget-wrapper.toc .toc a.active:before {
+  content: '🌸' !important;
+  width: 4px;
+  background: none;
+  left: -0.85rem;
+}
+.widget-wrapper.toc .toc a{
+  margin-left: 0.8rem;
+}
+.widget-wrapper.toc .toc a.toc-link.active {
+  margin-left: 0.9rem;
+}
+.widget-wrapper.toc .widget-body:before {
+  margin-left: 0.5rem;
+}
+
+.tag-plugin.tabs .nav-tabs {
+  overflow: auto visible !important;
+}
+
+
+/* md-text img.dark-mode-invert */
+.md-text img.dark-mode-invert {
+  margin: 0;
+  /* 移除自动边距 */
+  display: inline;
+  vertical-align: text-top;
+}
+
+/* post-count 和 totalcount */
+.post-count,
+.totalcount {
+  color: var(--text-p2);
+  scrollbar-width: none;
+  /* 隐藏滚动条 */
+}

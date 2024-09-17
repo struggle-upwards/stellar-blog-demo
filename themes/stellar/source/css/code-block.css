@@ -1,0 +1,374 @@
+html[data-theme="dark"] .hljs {
+  display: block;
+  overflow-x: hidden;
+  /*背景跟随Stellar*/
+  background: var(--block);
+  color: #eee;
+}
+
+html[data-theme="light"] .hljs {
+  display: block;
+  overflow-x: hidden;
+  /*背景跟随Stellar*/
+  background: var(--block);
+  color: #111;
+  padding-left: 4px;
+
+}
+
+pre::before {
+  content: attr(code-msg);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  overflow: visible;
+  width: 12px;
+  height: 12px;
+  border-radius: 16px;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  background-color: #fc625d;
+  white-space: nowrap;
+  text-indent: 75px;
+  font-size: 16px;
+  line-height: 12px;
+  font-weight: 700;
+  color: #dc9015;
+  transition: 1s;
+}
+
+.hljs-ln {
+  display: inline-block;
+  overflow-x: auto;
+  padding-bottom: 5px
+}
+
+.hljs-ln td {
+  padding: 0;
+  background-color: var(--block)
+}
+
+.hljs-ln::-webkit-scrollbar {
+  height: 10px;
+  border-radius: 5px;
+  background: #333;
+}
+
+.hljs-ln::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 5px;
+}
+
+.hljs-ln::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+
+.hljs table tbody tr {
+  border: none
+}
+
+.md-text .highlight>table tbody {
+  background: var(--block);
+}
+
+.hljs .hljs-ln-line {
+  padding: 1px 10px;
+  border: none
+}
+
+td.hljs-ln-line.hljs-ln-numbers {
+  border-right: 1px solid #666;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: #c78300
+}
+
+.hljs-link {
+  color: #569cd6;
+  text-decoration: underline
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: #4ec9b0
+}
+
+.hljs-number,
+.hljs-class {
+  color: #2094f3
+}
+
+.hljs-string,
+.hljs-meta-string {
+  color: #4caf50
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9a5334
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #c78300
+}
+
+.hljs-property {
+  color: #9c67a1;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #57a64a;
+  font-style: italic
+}
+
+.hljs-doctag {
+  color: #608b4e
+}
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9b9b9b
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #bd63c5
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #d34141
+}
+
+.hljs-section {
+  color: gold
+}
+
+.hljs-emphasis {
+  font-style: italic
+}
+
+.hljs-strong {
+  font-weight: bold
+}
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #c78300
+}
+
+.hljs-addition {
+  background-color: #00ff1121;
+  display: inline-block;
+  width: 100%
+}
+
+.hljs-deletion {
+  background-color: #ff000e21;
+  display: inline-block;
+  width: 100%
+}
+
+.md-text .highlight>table {
+  overflow: auto;
+  display: block;
+  margin: 0 !important;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+
+
+  tbody {
+    padding: 5px;
+    width: 100%;
+    background: var(--block);
+  }
+
+  .code {
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+/* 以下为功能按钮 */
+.highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight .code .more-btn {
+  position: absolute;
+  top: 0;
+  padding: 4px 0.5rem;
+  opacity: 0;
+  font-weight: 700;
+  color: var(--theme);
+  cursor: pointer;
+}
+
+.highlight:hover .code .more-btn {
+  opacity: 0.75;
+  transition: opacity 0.6s;
+}
+
+/* 复制代码按钮 */
+.highlight .code .copy-btn {
+  color: #aa69ec;
+  right: 0;
+  transition: 0.6s;
+}
+
+.highlight:hover .code .copy-btn {
+  right: 0;
+  transition: 0.2s;
+}
+
+.highlight .code .copy-btn.success {
+  color: #3DC550 !important;
+  opacity: 0.1;
+}
+
+/* 全屏代码按钮 */
+.highlight .code .full-btn {
+  color: #d34141;
+  right: 10px;
+  transition: 0.4s;
+}
+
+.highlight:hover .code .full-btn {
+  right: 25px;
+  transition: right 0.4s;
+}
+
+/* 下载代码按钮 */
+.highlight .code .down-btn {
+  color: #4368a8;
+  right: 26px;
+  transition: right 0.15s;
+}
+
+.highlight .code .down-btn.success {
+  color: #3DC550 !important;
+}
+
+.highlight:hover .code .down-btn {
+  right: 50px;
+  transition: right 0.5s;
+}
+
+/* 按钮悬浮样式 */
+.highlight .code .more-btn:hover {
+  /*color: var(--text-code);*/
+  opacity: 1;
+  transition: right 0.15s;
+}
+
+
+/* 描述 */
+.md-text .highlight figcaption span {
+  font-size: small;
+}
+
+/* 折叠 */
+code.hljs {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.hljsOpen {
+  -webkit-line-clamp: 99999 !important;
+}
+
+.CodeCloseDiv {
+  color: #999;
+  background: var(--block);
+  text-align: center;
+}
+
+.CodeClose {
+  color: #999;
+  margin-top: 3px;
+  background: var(--block);
+}
+
+.highlight button:hover,
+.highlight table:hover+button {
+  color: var(--swiper-theme-color);
+  opacity: 0.75;
+}
+
+/*代码标识前置*/
+td.code:before {
+  right: 0 !important;
+  transition: 0.65s;
+  z-index: 999;
+}
+
+.highlight:hover td.code:before {
+  right: 75px !important;
+  transition: right 0.6s;
+}
+
+/*stellar主题补偿*/
+.md-text pre>.hljs {
+  padding-top: 1rem !important;
+}
+
+.md-text .highlight .gutter {
+  display: block !important;
+  padding-top: 1rem !important;
+}
+
+.md-text pre {
+  padding: 0 !important;
+}
+
+#start>div>article>figure.highlight:hover>figcaption>span {
+  background: #020202e3;
+  color: #EDB65B;
+  font-weight: bolder;
+  transition: 0.6s;
+}
+
+#start>div>article>figure.highlight>figcaption>span {
+  margin-left: 3em;
+}
+
+/* 防止有些浏览器代码块不兼容 */
+.md-text .highlight>table {
+  overflow: auto;
+  display: block;
+  margin: 0 !important;
+  background: var(--block);
+  border-radius: 10px;
+}
+
+.code-collapsed,
+.pre-gutter-collapsed {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.code-expanded,
+.pre-gutter-expanded {
+  height: auto;
+  overflow: visible;
+}

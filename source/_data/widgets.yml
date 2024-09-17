@@ -1,0 +1,66 @@
+welcome:
+  layout: markdown
+  title: 欢迎欢迎
+  content: |
+    本站是 博客名字 的知识库和项目集合站，希望您在这里玩的开心。
+
+hitokoto:
+  layout: markdown
+  title: 座右铭
+  content: | # support markdown
+    不积硅步，无以至千里
+
+    不积小流，无以成江海
+
+categories:
+	layout: categories
+	title: 分类索引
+
+support:
+  layout: markdown
+  title: 赞助小站
+  content: |
+    ![微信](/assets/images/wepay.jpg)
+# 文章目录树
+toc:
+  layout: toc
+  list_number: false # 是否显示序号
+  min_depth: 2 # 建议不要低于 2 即从 H2 标签开始解析（H1标签用于文章大标题）
+  max_depth: 6 # 6 代表最多解析到 H6 标签
+  fallback: recent # Use a backup widget when toc does not exist.
+  collapse: true # true / false / auto (始终折叠/不折叠/自动折叠)
+
+# rss插件，最近更新的文章
+recent:
+  layout: recent
+  rss: /atom.xml # npm i hexo-generator-feed
+  limit: 5 # Count of posts
+
+# 显示具有相同 tags 的其它项目列表
+related:
+  layout: related
+
+# 标签索引组件
+tagcloud:
+  layout: tagcloud
+  title: 标签索引
+  # 标签索引配置
+  min_font: 12
+  max_font: 24
+  amount: 100
+  orderby: name
+  order: 1 # 1, sac 升序；-1, desc 降序
+  color: false # 使用颜色
+  start_color: # 开始的颜色。您可使用十六进位值（'#b700ff'），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  end_color: # 结束的颜色。您可使用十六进位值（'#b700ff'），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  show_count: false # 显示每个标签的文章总数
+
+# github用户卡片
+ghuser:
+  layout: ghuser
+  username: flipped-aurora # your github login username
+  avatar: true # show avatar or not
+  menu: true # show menu or not
+
+ghrepo:
+  layout: ghrepo
